@@ -6,12 +6,15 @@ function markWholeSide!(r::Robot, side::HorizonSide)
 end
 
 function markWholeField!(r::Robot)
-    #Начальная позиция 0, 0
+    #позиция 0, 0
+    cnt_x, cnt_y = 0, 0
     while isborder(r, West) == false
         move!(r, West)
+        cnt_x += 1
     end
     while isborder(r, Sud) == false
         move!(r, Sud)
+        cnt_y += 1
     end
 
     #Начинаем закраску
@@ -27,7 +30,7 @@ function markWholeField!(r::Robot)
             move!(r, Nord)
             putmarker!(r)
         end
-        cnt  += 1
+        cnt += 1
     end
 
     if cnt % 2 == 1
@@ -36,4 +39,23 @@ function markWholeField!(r::Robot)
         markWholeSide!(r, West)
     end
     #Всё поле промаркировано
+
+    #Возвращаем в позицию 0, 0
+    while isborder(r, West) == false
+        move!(r, West)
+    end
+    while isborder(r, Sud) == false
+        move!(r, Sud)
+    end
+
+    #Возвращаем в начальную позицию
+    while cnt_x > 0
+        move!(r, Ost)
+        cnt_x -= 1
+    end
+    while cnt_y > 0
+        move!(r, Nord)
+        cnt_y -= 1
+    end
+    #Робот в исходном положении
 end
