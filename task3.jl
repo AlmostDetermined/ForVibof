@@ -5,7 +5,7 @@ function markWholeSide!(r::Robot, side::HorizonSide)
     end
 end
 
-function markWholeField!(r::Robot)
+function main3!(r::Robot)
     #позиция 0, 0
     cnt_x, cnt_y = 0, 0
     while isborder(r, West) == false

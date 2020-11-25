@@ -39,7 +39,7 @@ function markOstUntil!(r::Robot, n)
     putmarker!(r)
 end
 
-function main!(r::Robot)
+function main4!(r::Robot)
     x, y = setLeftDown!(r)
     n = getHorLen(r)
     
@@ -64,5 +64,5 @@ function main!(r::Robot)
         y -= 1
     end
 
-    #Все условия выполнены, правда не очень эффективно, но этого не просилось
+    #Все условия выполнены не за минимальное количество шагов, однако этого не просилось
 end

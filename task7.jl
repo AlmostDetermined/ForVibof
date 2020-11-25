@@ -1,4 +1,4 @@
-function main!(r::Robot)
+function main7!(r::Robot)
     x, y = getStartPos(r)
 
     returnStartPos!(r, x, y)
