@@ -1,18 +1,18 @@
-function moveWest!(r, n)
+function moveWest!(r::Robot, n)
     while n > 0
         move!(r, West)
         n -= 1
     end
 end
 
-function moveOst!(r, n)
+function moveSide!(r::Robot, n)
     while n > 0
         move!(r, Ost)
         n -= 1
     end
 end
 
-function main8!(r)
+function main8!(r::Robot)
     cnt = 0
 
     while true
