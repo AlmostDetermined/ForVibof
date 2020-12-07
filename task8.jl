@@ -5,7 +5,7 @@ function moveWest!(r::Robot, n)
     end
 end
 
-function moveSide!(r::Robot, n)
+function moveOst!(r::Robot, n)
     while n > 0
         move!(r, Ost)
         n -= 1
