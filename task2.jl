@@ -40,7 +40,6 @@ function main2!(r::Robot)
     moves!(r, Ost)
     moves!(r, Sud)
     moves!(r, West)
-
     getSP!(r, x, y)
     #Каждое условие выполнено
 end
