@@ -1,6 +1,6 @@
-function moves!(r::Robot,side::HorizonSide)
-    while isborder(r,side) == false
-        move!(r,side)
+function moves!(r::Robot, side::HorizonSide)
+    while isborder(r, side) == false
+        move!(r, side)
         putmarker!(r)
     end
 end
