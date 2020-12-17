@@ -9,7 +9,7 @@ function main5!(r::Robot)
       moveSide!(r, Sud)
       putmarker!(r)
       moveSide!(r, West)
-      #Каждый угол помечан
+      #Каждый угол помечен
 
       leftDown!(r, path) #Робот в исходном положении
 end
