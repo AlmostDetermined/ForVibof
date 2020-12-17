@@ -8,7 +8,7 @@ function moveSideN!(r::Robot, side::HorizonSide, n)
     end
 end
 
-function main8!(r::Robot)
+function main9!(r::Robot)
     cnt = 0
 
     while true
