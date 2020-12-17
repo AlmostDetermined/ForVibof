@@ -1,13 +1,6 @@
-function moveWest!(r::Robot, n)
+function moveFull!(r::Robot, side::HorizonSide, n)
     while n > 0
-        move!(r, West)
-        n -= 1
-    end
-end
-
-function moveOst!(r::Robot, n)
-    while n > 0
-        move!(r, Ost)
+        move!(r, side)
         n -= 1
     end
 end
@@ -23,9 +16,9 @@ function main8!(r::Robot)
         cnt += 1
 
         if cnt % 2 == 1
-            moveWest!(r, cnt)
+            moveFull!(r, West, cnt)
         else
-            moveOst!(r, cnt)
+            moveFull!(r, Ost, cnt)
         end
     end         
 end
