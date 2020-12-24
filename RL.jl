@@ -126,7 +126,7 @@ function move_if_possible!(r::Robot, direct_side::HorizonSide)::Bool
         end
         if isborder(r, direct_side) == false
             move!(r, direct_side)
-            while isborder(r, right_side) == true #забраться на конец прямоугольной перегородки по заданному направлению
+            while isborder(r, right_side) == true #Забраться на конец прямоугольной перегородки по заданному направлению
                 move!(r, direct_side)
             end
             result = true
