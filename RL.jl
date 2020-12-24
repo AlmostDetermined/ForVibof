@@ -96,7 +96,7 @@ end
 """
 function through_rectangles_into_angle(r,angle::NTuple{2,HorizonSide})
     num_steps = []
-    while (isborder(r,angle[1]) == false || isborder(r,angle[2]) == false)
+    while (isborder(r, angle[1]) == false || isborder(r, angle[2]) == false)
         push!(num_steps, get_num_movements!(r, angle[2]))
         push!(num_steps, get_num_movements!(r, angle[1]))
     end
@@ -116,7 +116,7 @@ function move_if_possible!(r::Robot, direct_side::HorizonSide)::Bool
         move!(r, direct_side)
         result = true
     else
-        while isborder(r, direct_side) == true
+        while isborder(r, direct_side) == true #Если есть перегородка в заданном направлении, то выбираем для движения направление против часовой стрелке, пока есть перегордка в заданном
             if isborder(r, left_side) == false
                 move!(r, left_side)
                 num_of_steps += 1
@@ -126,14 +126,14 @@ function move_if_possible!(r::Robot, direct_side::HorizonSide)::Bool
         end
         if isborder(r, direct_side) == false
             move!(r, direct_side)
-            while isborder(r, right_side) == true
+            while isborder(r, right_side) == true #забраться на конец прямоугольной перегородки по заданному направлению
                 move!(r, direct_side)
             end
             result = true
         else
             result = false
         end
-        while num_of_steps > 0
+        while num_of_steps > 0 #Возвращает робота в то же место по оси исходного движения
             num_of_steps -= 1
             move!(r, right_side)
         end
