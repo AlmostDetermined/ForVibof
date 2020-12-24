@@ -1,4 +1,4 @@
-#to ease
+#to ease directions
 arrows = ['^', "<-", 'V', "->"]
 for i = 0:3
     print(HorizonSide(i), " ", arrows[i + 1], " | ", i, "\n")
